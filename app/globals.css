@@ -1,26 +1,254 @@
 @import "tailwindcss";
 
+@theme {
+  /* Greens */
+  --color-green-deep: #1b3a0f;
+  --color-green-forest: #2d5a1b;
+  --color-green-mid: #4a7c2f;
+  --color-green-sage: #6b9e42;
+  --color-green-leaf: #9ec26a;
+  --color-green-light: #c5dfa0;
+  --color-green-mist: #e8f4da;
+
+  /* Warms */
+  --color-amber: #e8941a;
+  --color-gold: #f2b038;
+  --color-terra: #c45a2a;
+
+  /* Neutrals */
+  --color-cream: #faf6ec;
+  --color-cream-dark: #f0e8d6;
+  --color-bark: #5c3d1e;
+  --color-soil: #2c1a0e;
+
+  /* Fonts — vars injected by next/font in layout.tsx */
+  --font-display: var(--font-lora);
+  --font-body: var(--font-dm-sans);
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 rgb(27 58 15 / 0.06), 0 4px 16px 0 rgb(27 58 15 / 0.08);
+  --shadow-card-hover: 0 4px 8px 0 rgb(27 58 15 / 0.1), 0 12px 32px 0 rgb(27 58 15 / 0.14);
+  --shadow-nav: 0 2px 20px rgb(27 58 15 / 0.3);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-green-deep);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: clamp(15px, 1vw + 12px, 17px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leafDrift {
+  0% {
+    opacity: 0.7;
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(-18px) rotate(8deg);
+  }
+  66% {
+    opacity: 0.85;
+    transform: translateY(-8px) rotate(-5deg);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes navShrink {
+  from {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  to {
+    background-color: var(--color-green-deep);
+    box-shadow: var(--shadow-nav);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .nav-scroll-bg {
+    animation: navShrink linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 120px;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fadeUp 0.65s var(--ease-smooth) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 28%;
+  }
+
+  .reveal-scale {
+    animation: scaleIn 0.6s var(--ease-smooth) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 28%;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 80ms;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 160ms;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 240ms;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-amber
+      px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all duration-200
+      hover:-translate-y-0.5 hover:bg-gold hover:shadow-xl active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full
+      border-2 border-green-leaf px-8 py-3.5 text-base font-semibold text-green-leaf
+      transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-leaf
+      hover:text-white active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full
+      px-6 py-3 text-base font-semibold text-cream/80 transition-colors duration-200
+      hover:text-gold;
+  }
+
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-amber;
+  }
+
+  .display-heading {
+    @apply font-display text-4xl font-bold leading-tight text-green-deep md:text-5xl lg:text-6xl;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl font-bold leading-snug text-green-deep md:text-4xl lg:text-5xl;
+  }
+
+  .body-lg {
+    @apply text-lg leading-relaxed text-green-forest/80;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white p-6 ring-1 ring-green-deep/5 transition-shadow duration-200;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .card-dark {
+    @apply rounded-2xl bg-green-forest p-6 transition-shadow duration-200;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-dark:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-cream/80 transition-colors duration-150 hover:text-gold;
+  }
+
+  .chip {
+    @apply inline-flex cursor-pointer items-center rounded-full border border-green-leaf/30
+      bg-green-mist px-4 py-1.5 text-sm font-medium text-green-forest transition-colors
+      duration-150 hover:border-green-leaf hover:bg-green-leaf/20;
+  }
+
+  .chip-active {
+    @apply border-green-leaf bg-green-leaf text-white;
+  }
+
+  .divider-leaf {
+    @apply mx-auto my-4 h-0.5 w-12 rounded-full bg-amber;
+  }
+
+  .marquee-track {
+    @apply flex w-max;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .stat-number {
+    @apply font-display text-5xl font-bold text-gold md:text-6xl;
+  }
+
+  .stat-label {
+    @apply mt-1 text-sm font-medium uppercase tracking-wide text-green-light/80;
+  }
 }
