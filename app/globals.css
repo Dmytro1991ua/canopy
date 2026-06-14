@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Greens */
@@ -157,22 +157,15 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-amber
-      px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all duration-200
-      hover:-translate-y-0.5 hover:bg-gold hover:shadow-xl active:translate-y-0;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-amber px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold hover:shadow-xl active:translate-y-0;
   }
 
   .btn-outline {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full
-      border-2 border-green-leaf px-8 py-3.5 text-base font-semibold text-green-leaf
-      transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-leaf
-      hover:text-white active:translate-y-0;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-green-leaf px-8 py-3.5 text-base font-semibold text-green-leaf transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-leaf hover:text-white active:translate-y-0;
   }
 
   .btn-ghost {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full
-      px-6 py-3 text-base font-semibold text-cream/80 transition-colors duration-200
-      hover:text-gold;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-cream/80 transition-colors duration-200 hover:text-gold;
   }
 
   .section-container {
@@ -184,15 +177,15 @@ body {
   }
 
   .eyebrow {
-    @apply text-xs font-bold uppercase tracking-[0.2em] text-amber;
+    @apply text-xs font-bold tracking-[0.2em] text-amber uppercase;
   }
 
   .display-heading {
-    @apply font-display text-4xl font-bold leading-tight text-green-deep md:text-5xl lg:text-6xl;
+    @apply font-display text-4xl leading-tight font-bold text-green-deep md:text-5xl lg:text-6xl;
   }
 
   .section-heading {
-    @apply font-display text-3xl font-bold leading-snug text-green-deep md:text-4xl lg:text-5xl;
+    @apply font-display text-3xl leading-snug font-bold text-green-deep md:text-4xl lg:text-5xl;
   }
 
   .body-lg {
@@ -222,9 +215,7 @@ body {
   }
 
   .chip {
-    @apply inline-flex cursor-pointer items-center rounded-full border border-green-leaf/30
-      bg-green-mist px-4 py-1.5 text-sm font-medium text-green-forest transition-colors
-      duration-150 hover:border-green-leaf hover:bg-green-leaf/20;
+    @apply inline-flex cursor-pointer items-center rounded-full border border-green-leaf/30 bg-green-mist px-4 py-1.5 text-sm font-medium text-green-forest transition-colors duration-150 hover:border-green-leaf hover:bg-green-leaf/20;
   }
 
   .chip-active {
@@ -249,6 +240,6 @@ body {
   }
 
   .stat-label {
-    @apply mt-1 text-sm font-medium uppercase tracking-wide text-green-light/80;
+    @apply mt-1 text-sm font-medium tracking-wide text-green-light/80 uppercase;
   }
 }
