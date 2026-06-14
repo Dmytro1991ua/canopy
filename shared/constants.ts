@@ -18,14 +18,14 @@ export const NAV_LINKS: NavLink[] = [
 ]
 
 export const MARQUEE_ITEMS: MarqueeItem[] = [
-  { text: 'Solar Energy', icon: '☀️' },
-  { text: 'Wind Power', icon: '🌬️' },
-  { text: 'Reforestation', icon: '🌳' },
-  { text: 'Ocean Health', icon: '🌊' },
-  { text: 'Clean Transport', icon: '⚡' },
-  { text: 'Biodiversity', icon: '🦋' },
-  { text: 'Carbon Capture', icon: '🌿' },
-  { text: 'Green Cities', icon: '🏙️' },
+  { text: '15 billion trees lost every year' },
+  { text: '1.5°C — the warming line we must hold' },
+  { text: 'Over 1 million species face extinction' },
+  { text: 'Ocean temperatures hit record highs in 2025' },
+  { text: '$44 trillion in global GDP at risk from nature loss' },
+  { text: '2030 — our last real window for meaningful action' },
+  { text: 'Renewable energy now cheaper than fossil fuels' },
+  { text: 'Every degree of change we prevent saves lives' },
 ]
 
 export const CRISIS_STATS: CrisisStat[] = [

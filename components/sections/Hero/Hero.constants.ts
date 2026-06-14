@@ -3,7 +3,7 @@ import type { FloatingLeaf, HeroCta, HeroStat } from './Hero.types'
 export const HERO_EYEBROW = 'The time is now'
 
 export const HERO_SUB =
-  "Over 15 billion trees fall every year. A million species face extinction. The oceans are warming, the ice is retreating — and every choice you make either slows that process or speeds it up. Join the movement choosing differently."
+  'Over 15 billion trees fall every year. A million species face extinction. The oceans are warming, the ice is retreating — and every choice you make either slows that process or speeds it up. Join the movement choosing differently.'
 
 export const HERO_CTA_PRIMARY: HeroCta = { label: 'Take the Pledge', href: '#pledge' }
 export const HERO_CTA_SECONDARY: HeroCta = { label: 'See the Crisis', href: '#why' }

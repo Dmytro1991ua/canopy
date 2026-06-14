@@ -5,7 +5,6 @@ export type NavLink = {
 
 export type MarqueeItem = {
   text: string
-  icon: string
 }
 
 export type CrisisStat = {
