@@ -121,29 +121,32 @@ export const PLEDGE_CHIPS: PledgeChip[] = [
 
 export const FOOTER_COLUMNS: FooterColumn[] = [
   {
-    heading: 'Solutions',
+    heading: 'Mission',
     links: [
-      { label: 'Solar & Wind', href: '#' },
-      { label: 'Forest Restoration', href: '#' },
-      { label: 'Ocean Ecosystems', href: '#' },
-      { label: 'Clean Transport', href: '#' },
+      { label: 'Why It Matters', href: '#why' },
+      { label: 'Reforestation', href: '#focus' },
+      { label: 'Clean Energy', href: '#focus' },
+      { label: 'Ocean Health', href: '#focus' },
+      { label: 'Policy Work', href: '#focus' },
     ],
   },
   {
-    heading: 'Community',
+    heading: 'Take Action',
     links: [
-      { label: 'Find a Chapter', href: '#' },
-      { label: 'Impact Dashboard', href: '#' },
-      { label: 'Events', href: '#' },
-      { label: 'Newsletter', href: '#' },
+      { label: 'Sign the Pledge', href: '#pledge' },
+      { label: 'Plant a Tree', href: '#' },
+      { label: 'Calculate Your Impact', href: '#' },
+      { label: 'Join a Local Chapter', href: '#' },
+      { label: 'Donate', href: '#' },
     ],
   },
   {
     heading: 'Organisation',
     links: [
       { label: 'About Canopy', href: '#' },
-      { label: 'Partners', href: '#' },
-      { label: 'Press', href: '#' },
+      { label: 'Our Partners', href: '#' },
+      { label: 'Annual Reports', href: '#' },
+      { label: 'Press & Media', href: '#' },
       { label: 'Careers', href: '#' },
     ],
   },
