@@ -11,10 +11,10 @@ import type {
 } from './types'
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Why It Matters', href: '#why-it-matters' },
-  { label: 'Focus Areas', href: '#focus-areas' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Impact', href: '#impact' },
+  { label: 'Why It Matters', href: '#why' },
+  { label: 'What We Do', href: '#focus' },
+  { label: 'Our Impact', href: '#impact' },
+  { label: 'Get Involved', href: '#pledge' },
 ]
 
 export const MARQUEE_ITEMS: MarqueeItem[] = [

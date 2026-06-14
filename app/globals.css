@@ -214,6 +214,10 @@ body {
     @apply text-sm font-medium text-cream/80 transition-colors duration-150 hover:text-gold;
   }
 
+  .nav-hamburger-line {
+    @apply block h-0.5 w-6 bg-cream transition-all duration-200;
+  }
+
   .chip {
     @apply inline-flex cursor-pointer items-center rounded-full border border-green-leaf/30 bg-green-mist px-4 py-1.5 text-sm font-medium text-green-forest transition-colors duration-150 hover:border-green-leaf hover:bg-green-leaf/20;
   }
