@@ -1,4 +1,29 @@
+'use client'
+
 import { CRISIS_STATS } from '@/shared/constants'
+import { useCountUp } from '@/shared/hooks/useCountUp'
+
+import type { CrisisStat } from '@/shared/types'
+
+function CrisisStatItem({ stat }: Readonly<{ stat: CrisisStat }>) {
+  const { count, elRef } = useCountUp(stat.numericValue, stat.decimals, 1600)
+
+  return (
+    <div
+      ref={elRef}
+      className="rounded-xl border border-white/10 bg-white/7 p-5 transition-colors duration-200 hover:bg-white/12"
+    >
+      <div
+        className="mb-1.5 font-display leading-none font-bold text-gold"
+        style={{ fontSize: 'clamp(28px, 3vw, 42px)' }}
+      >
+        {count}
+        {stat.suffix}
+      </div>
+      <div className="text-[13px] leading-snug text-white/65">{stat.label}</div>
+    </div>
+  )
+}
 
 export default function WhyItMattersCard() {
   return (
@@ -12,18 +37,7 @@ export default function WhyItMattersCard() {
       >
         <div className="relative grid grid-cols-2 gap-4">
           {CRISIS_STATS.map((stat) => (
-            <div
-              key={stat.value}
-              className="rounded-xl border border-white/10 bg-white/7 p-5 transition-colors duration-200 hover:bg-white/12"
-            >
-              <div
-                className="mb-1.5 font-display leading-none font-bold text-gold"
-                style={{ fontSize: 'clamp(28px, 3vw, 42px)' }}
-              >
-                {stat.value}
-              </div>
-              <div className="text-[13px] leading-snug text-white/65">{stat.label}</div>
-            </div>
+            <CrisisStatItem key={stat.label} stat={stat} />
           ))}
         </div>
       </div>

@@ -9,9 +9,9 @@ export const HERO_CTA_PRIMARY: HeroCta = { label: 'Take the Pledge', href: '#ple
 export const HERO_CTA_SECONDARY: HeroCta = { label: 'See the Crisis', href: '#why' }
 
 export const HERO_STATS: HeroStat[] = [
-  { value: '18M+', label: 'Pledge signers worldwide' },
-  { value: '2.4M', label: 'Trees planted together' },
-  { value: '147', label: 'Countries represented' },
+  { numericValue: 18, decimals: 0, suffix: 'M+', label: 'Pledge signers worldwide' },
+  { numericValue: 2.4, decimals: 1, suffix: 'M', label: 'Trees planted together' },
+  { numericValue: 147, decimals: 0, suffix: '', label: 'Countries represented' },
 ]
 
 export const FLOATING_LEAVES: FloatingLeaf[] = [

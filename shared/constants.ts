@@ -28,10 +28,34 @@ export const MARQUEE_ITEMS: MarqueeItem[] = [
 ]
 
 export const CRISIS_STATS: CrisisStat[] = [
-  { value: '15B', label: 'Trees lost every year to deforestation', source: 'FAO 2023' },
-  { value: '1.5°C', label: 'Warming threshold we must not exceed', source: 'IPCC 2023' },
-  { value: '1M+', label: 'Species at risk of extinction this century', source: 'IPBES 2019' },
-  { value: '2030', label: 'Last window for meaningful systemic change', source: 'UNEP 2023' },
+  {
+    numericValue: 15,
+    decimals: 0,
+    suffix: 'B',
+    label: 'Trees lost every year to deforestation',
+    source: 'FAO 2023',
+  },
+  {
+    numericValue: 1.5,
+    decimals: 1,
+    suffix: '°C',
+    label: 'Warming threshold we must not exceed',
+    source: 'IPCC 2023',
+  },
+  {
+    numericValue: 1,
+    decimals: 0,
+    suffix: 'M+',
+    label: 'Species at risk of extinction this century',
+    source: 'IPBES 2019',
+  },
+  {
+    numericValue: 2030,
+    decimals: 0,
+    suffix: '',
+    label: 'Last window for meaningful systemic change',
+    source: 'UNEP 2023',
+  },
 ]
 
 export const HOW_STEPS: HowStep[] = [
@@ -56,10 +80,10 @@ export const HOW_STEPS: HowStep[] = [
 ]
 
 export const IMPACT_STATS: ImpactStat[] = [
-  { value: '4.2', suffix: 'M', label: 'Members worldwide' },
-  { value: '18', suffix: 'M', label: 'Tonnes CO₂ offset' },
-  { value: '62', suffix: 'M', label: 'Trees planted' },
-  { value: '140', suffix: '+', label: 'Countries active' },
+  { numericValue: 4.2, decimals: 1, suffix: 'M', label: 'Members worldwide' },
+  { numericValue: 18, decimals: 0, suffix: 'M', label: 'Tonnes CO₂ offset' },
+  { numericValue: 62, decimals: 0, suffix: 'M', label: 'Trees planted' },
+  { numericValue: 140, decimals: 0, suffix: '+', label: 'Countries active' },
 ]
 
 export const TESTIMONIAL: Testimonial = {

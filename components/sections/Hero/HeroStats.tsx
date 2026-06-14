@@ -1,4 +1,24 @@
+'use client'
+
+import { useCountUp } from '@/shared/hooks/useCountUp'
+
 import { HERO_STATS } from './Hero.constants'
+
+import type { HeroStat } from './Hero.types'
+
+function HeroStatItem({ stat }: Readonly<{ stat: HeroStat }>) {
+  const { count, elRef } = useCountUp(stat.numericValue, stat.decimals, 1600)
+
+  return (
+    <div ref={elRef}>
+      <span className="block font-display text-[clamp(28px,3vw,38px)] leading-none font-bold text-white">
+        {count}
+        {stat.suffix}
+      </span>
+      <span className="mt-1 block text-xs text-white/55">{stat.label}</span>
+    </div>
+  )
+}
 
 export default function HeroStats() {
   return (
@@ -8,12 +28,7 @@ export default function HeroStats() {
       style={{ animationDelay: '0.68s' }}
     >
       {HERO_STATS.map((stat) => (
-        <div key={stat.value}>
-          <span className="block font-display text-[clamp(28px,3vw,38px)] leading-none font-bold text-white">
-            {stat.value}
-          </span>
-          <span className="mt-1 block text-xs text-white/55">{stat.label}</span>
-        </div>
+        <HeroStatItem key={stat.label} stat={stat} />
       ))}
     </div>
   )
