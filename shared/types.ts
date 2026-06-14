@@ -8,7 +8,9 @@ export type MarqueeItem = {
 }
 
 export type CrisisStat = {
-  value: string
+  numericValue: number
+  decimals: number
+  suffix: string
   label: string
   source: string
 }
@@ -20,7 +22,8 @@ export type HowStep = {
 }
 
 export type ImpactStat = {
-  value: string
+  numericValue: number
+  decimals: number
   suffix: string
   label: string
 }

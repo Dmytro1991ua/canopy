@@ -1,5 +1,7 @@
 export type HeroStat = {
-  value: string
+  numericValue: number
+  decimals: number
+  suffix: string
   label: string
 }
 
