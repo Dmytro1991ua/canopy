@@ -1,6 +1,5 @@
 import type {
   CrisisStat,
-  FocusArea,
   FooterColumn,
   HowStep,
   ImpactStat,
@@ -33,45 +32,6 @@ export const CRISIS_STATS: CrisisStat[] = [
   { value: '1.5°C', label: 'Warming threshold we must not exceed', source: 'IPCC 2023' },
   { value: '1M+', label: 'Species at risk of extinction this century', source: 'IPBES 2019' },
   { value: '2030', label: 'Last window for meaningful systemic change', source: 'UNEP 2023' },
-]
-
-export const FOCUS_AREAS: FocusArea[] = [
-  {
-    id: 'solar',
-    icon: '☀️',
-    title: 'Solar & Wind',
-    description:
-      'Deploying renewable infrastructure in underserved communities to replace fossil fuels with clean, affordable power.',
-    stat: '90%',
-    statLabel: 'cost drop since 2010',
-  },
-  {
-    id: 'forests',
-    icon: '🌳',
-    title: 'Forest Restoration',
-    description:
-      'Partnering with indigenous stewards to restore degraded land and protect old-growth carbon sinks.',
-    stat: '2B',
-    statLabel: 'trees planted by 2030',
-  },
-  {
-    id: 'oceans',
-    icon: '🌊',
-    title: 'Ocean Ecosystems',
-    description:
-      'Rebuilding marine biodiversity through kelp forest restoration and plastic reduction initiatives.',
-    stat: '30%',
-    statLabel: 'of oceans protected by 2030',
-  },
-  {
-    id: 'transport',
-    icon: '⚡',
-    title: 'Clean Transport',
-    description:
-      'Accelerating the shift to electric mobility with charging infrastructure and policy advocacy.',
-    stat: '50%',
-    statLabel: 'of new cars electric by 2030',
-  },
 ]
 
 export const HOW_STEPS: HowStep[] = [
