@@ -6,7 +6,7 @@ export default function Testimonial() {
   return (
     <section
       aria-labelledby="testimonial-heading"
-      className="section-padding bg-green-deep overflow-hidden"
+      className="section-padding overflow-hidden bg-green-deep"
     >
       <div className="section-container">
         <div className="reveal mb-12 text-center">
@@ -36,7 +36,7 @@ export default function Testimonial() {
           </div>
 
           <blockquote>
-            <p className="font-display text-[clamp(18px,2.5vw,26px)] leading-[1.55] font-medium italic text-cream/90">
+            <p className="font-display text-[clamp(18px,2.5vw,26px)] leading-[1.55] font-medium text-cream/90 italic">
               {TESTIMONIAL.quote}
             </p>
           </blockquote>
