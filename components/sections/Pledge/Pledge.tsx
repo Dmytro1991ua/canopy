@@ -16,7 +16,7 @@ import { usePledge } from './Pledge.hooks'
 import PledgeChipItem from './PledgeChipItem'
 
 export default function Pledge() {
-  const { selected, toggle, canSubmit } = usePledge()
+  const { selected, toggle, canSubmit, reset } = usePledge()
   const [submitted, setSubmitted] = useState(false)
 
   function handleSubmit() {
@@ -33,7 +33,7 @@ export default function Pledge() {
           <h2 id="pledge-heading" className="section-heading mt-4">
             {PLEDGE_HEADING}
           </h2>
-          <p className="body-lg mx-auto mt-4 max-w-[520px]">{PLEDGE_SUBTEXT}</p>
+          <p className="body-lg mx-auto mt-4 max-w-130">{PLEDGE_SUBTEXT}</p>
         </div>
 
         {submitted ? (
@@ -41,7 +41,17 @@ export default function Pledge() {
             <div className="mb-4 text-4xl" aria-hidden="true">
               🌿
             </div>
-            <p className="text-base font-semibold text-green-deep">{PLEDGE_SUCCESS_MESSAGE}</p>
+            <p className="mb-6 text-base font-semibold text-green-deep">{PLEDGE_SUCCESS_MESSAGE}</p>
+            <button
+              type="button"
+              onClick={() => {
+                reset()
+                setSubmitted(false)
+              }}
+              className="text-sm text-green-forest/60 underline underline-offset-2 transition-colors hover:text-green-forest"
+            >
+              Change my pledge
+            </button>
           </div>
         ) : (
           <div className="reveal mx-auto max-w-2xl">
@@ -61,7 +71,7 @@ export default function Pledge() {
                 variant="primary"
                 disabled={!canSubmit}
                 onClick={handleSubmit}
-                className="min-w-[200px] disabled:cursor-not-allowed disabled:opacity-50"
+                className="btn-wiggle min-w-50 disabled:animate-none disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {PLEDGE_CTA_LABEL}
               </Button>

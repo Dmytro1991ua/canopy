@@ -8,8 +8,8 @@ import HeroStats from './HeroStats'
 export default function HeroContent() {
   return (
     <div
-      className="relative z-[2] mx-auto flex w-full max-w-7xl flex-col items-start gap-5 px-4 sm:px-6 lg:px-8"
-      style={{ padding: 'clamp(100px, 14vh, 160px) 0 4rem' }}
+      className="relative z-[2] mx-auto flex w-full max-w-7xl flex-col items-start gap-5 px-4 pb-16 sm:px-6 lg:px-8"
+      style={{ paddingTop: 'clamp(100px, 14vh, 160px)' }}
     >
       <span className="eyebrow hero-fade" style={{ animationDelay: '0.1s' }}>
         {HERO_EYEBROW}
@@ -33,7 +33,9 @@ export default function HeroContent() {
       </p>
       <div className="hero-fade flex flex-wrap gap-3" style={{ animationDelay: '0.52s' }}>
         <Link href={HERO_CTA_PRIMARY.href}>
-          <Button variant="primary">{HERO_CTA_PRIMARY.label}</Button>
+          <Button variant="primary" className="btn-wiggle">
+            {HERO_CTA_PRIMARY.label}
+          </Button>
         </Link>
         <Link href={HERO_CTA_SECONDARY.href}>
           <Button variant="ghost">

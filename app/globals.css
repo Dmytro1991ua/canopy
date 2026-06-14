@@ -38,6 +38,27 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #4a7c2f #1b3a0f;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1b3a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a7c2f;
+  border-radius: 999px;
+  border: 2px solid #1b3a0f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b9e42;
 }
 
 body {
@@ -76,6 +97,26 @@ body {
   100% {
     opacity: 0.7;
     transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  10%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  2% {
+    transform: rotate(-4deg) translateY(-3px);
+  }
+  4% {
+    transform: rotate(4deg) translateY(-2px);
+  }
+  6% {
+    transform: rotate(-2.5deg) translateY(-3px);
+  }
+  8% {
+    transform: rotate(1.5deg) translateY(-1px);
   }
 }
 
@@ -162,7 +203,11 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-amber px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold hover:shadow-xl active:translate-y-0;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-amber px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-[background-color,box-shadow,translate,color] duration-200 hover:-translate-y-0.5 hover:bg-gold hover:shadow-xl active:translate-y-0;
+  }
+
+  .btn-wiggle {
+    animation: wiggle 5s ease-in-out 2s infinite;
   }
 
   .btn-outline {
@@ -249,6 +294,6 @@ body {
   }
 
   .stat-label {
-    @apply mt-1 text-sm font-medium tracking-wide text-green-light/80 uppercase;
+    @apply mt-1 text-sm font-medium tracking-wide uppercase;
   }
 }

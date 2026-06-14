@@ -18,5 +18,7 @@ export function usePledge(): UsePledgeReturn {
     })
   }, [])
 
-  return { selected, toggle, canSubmit: selected.size > 0 }
+  const reset = useCallback(() => setSelected(new Set()), [])
+
+  return { selected, toggle, canSubmit: selected.size > 0, reset }
 }

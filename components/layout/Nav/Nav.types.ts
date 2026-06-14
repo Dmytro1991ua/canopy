@@ -5,6 +5,7 @@ export type NavMenuState = {
 export type UseNavReturn = {
   menu: NavMenuState
   scrolled: boolean
+  activeHref: string
   closeMenu: () => void
   toggleMenu: () => void
 }
