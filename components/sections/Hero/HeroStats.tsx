@@ -9,7 +9,7 @@ export default function HeroStats() {
     >
       {HERO_STATS.map((stat) => (
         <div key={stat.value}>
-          <span className="font-display block text-[clamp(28px,3vw,38px)] font-bold leading-none text-white">
+          <span className="block font-display text-[clamp(28px,3vw,38px)] leading-none font-bold text-white">
             {stat.value}
           </span>
           <span className="mt-1 block text-xs text-white/55">{stat.label}</span>

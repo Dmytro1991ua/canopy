@@ -237,10 +237,10 @@ body {
 
   .marquee-track {
     @apply flex w-max;
-    animation: marquee 30s linear infinite;
+    animation: marquee 36s linear infinite;
   }
 
-  .marquee-track:hover {
+  .marquee-bar:hover .marquee-track {
     animation-play-state: paused;
   }
 

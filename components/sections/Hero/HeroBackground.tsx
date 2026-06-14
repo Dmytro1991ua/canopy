@@ -8,7 +8,7 @@ export default function HeroBackground() {
       {/* Warm sun glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-[8%] -top-[15%] h-[75vmax] w-[75vmax]"
+        className="pointer-events-none absolute -top-[15%] -right-[8%] h-[75vmax] w-[75vmax]"
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(242,176,56,.22) 0%, rgba(232,148,26,.1) 40%, transparent 70%)',
@@ -31,7 +31,7 @@ export default function HeroBackground() {
         fill="currentColor"
         aria-hidden="true"
         focusable="false"
-        className="pointer-events-none absolute right-[-4%] top-[5%] text-green-leaf"
+        className="pointer-events-none absolute top-[5%] right-[-4%] text-green-leaf"
         style={{ width: 'clamp(320px, 40vw, 680px)', opacity: 0.12 }}
       >
         <path d="M250 10C250 10 440 120 420 310C405 450 310 540 250 630C190 540 95 450 80 310C60 120 250 10 250 10Z" />
