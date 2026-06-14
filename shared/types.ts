@@ -13,15 +13,6 @@ export type CrisisStat = {
   source: string
 }
 
-export type FocusArea = {
-  id: string
-  icon: string
-  title: string
-  description: string
-  stat: string
-  statLabel: string
-}
-
 export type HowStep = {
   number: string
   title: string
