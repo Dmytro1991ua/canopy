@@ -21,7 +21,7 @@ export default function ImpactNumbers() {
           <p className="body-lg mx-auto mt-4 max-w-[520px]">{IMPACT_SUBTEXT}</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-8 lg:grid-cols-4 lg:gap-10">
           {IMPACT_STATS.map((stat, i) => (
             <ImpactStatCard key={stat.label} stat={stat} delay={IMPACT_STAT_DELAYS[i]} />
           ))}

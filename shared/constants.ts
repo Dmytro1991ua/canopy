@@ -44,7 +44,7 @@ export const CRISIS_STATS: CrisisStat[] = [
   },
   {
     numericValue: 1,
-    decimals: 0,
+    decimals: 1,
     suffix: 'M+',
     label: 'Species at risk of extinction this century',
     source: 'IPBES 2019',

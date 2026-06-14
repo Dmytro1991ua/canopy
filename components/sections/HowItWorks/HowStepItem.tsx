@@ -13,7 +13,7 @@ export default function HowStepItem({ number, title, description, isLast }: HowS
 
       {/* Step number badge */}
       <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border-2 border-gold/40 bg-green-forest">
-        <span className="stat-number text-xl text-gold">{number}</span>
+        <span className="font-display text-xl font-bold text-gold">{number}</span>
       </div>
 
       <h3 className="mb-3 text-lg font-semibold text-cream">{title}</h3>
