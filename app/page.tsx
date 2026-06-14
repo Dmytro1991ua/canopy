@@ -8,6 +8,7 @@ import MarqueeBar from '@/components/sections/MarqueeBar'
 import Pledge from '@/components/sections/Pledge'
 import Testimonial from '@/components/sections/Testimonial'
 import WhyItMatters from '@/components/sections/WhyItMatters'
+import BackToTop from '@/components/ui/BackToTop'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Pledge />
       </main>
       <Footer />
+      <BackToTop />
     </>
   )
 }
