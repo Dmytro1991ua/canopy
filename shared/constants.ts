@@ -29,9 +29,10 @@ export const MARQUEE_ITEMS: MarqueeItem[] = [
 ]
 
 export const CRISIS_STATS: CrisisStat[] = [
-  { value: '1.5°C', label: 'warming threshold we must not cross', source: 'IPCC 2023' },
-  { value: '8M', label: 'premature deaths yearly from air pollution', source: 'WHO 2022' },
-  { value: '1M+', label: 'species threatened with extinction', source: 'IPBES 2019' },
+  { value: '15B', label: 'Trees lost every year to deforestation', source: 'FAO 2023' },
+  { value: '1.5°C', label: 'Warming threshold we must not exceed', source: 'IPCC 2023' },
+  { value: '1M+', label: 'Species at risk of extinction this century', source: 'IPBES 2019' },
+  { value: '2030', label: 'Last window for meaningful systemic change', source: 'UNEP 2023' },
 ]
 
 export const FOCUS_AREAS: FocusArea[] = [

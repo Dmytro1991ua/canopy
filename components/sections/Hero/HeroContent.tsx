@@ -11,22 +11,17 @@ export default function HeroContent() {
       className="relative z-[2] mx-auto flex w-full max-w-7xl flex-col items-start gap-5 px-4 sm:px-6 lg:px-8"
       style={{ padding: 'clamp(100px, 14vh, 160px) 0 4rem' }}
     >
-      {/* Eyebrow */}
       <span className="eyebrow hero-fade" style={{ animationDelay: '0.1s' }}>
         {HERO_EYEBROW}
       </span>
-
-      {/* Headline */}
       <h1
         className="hero-fade max-w-[800px] font-display text-[clamp(2.6rem,6vw,5rem)] leading-tight font-bold text-white"
         style={{ animationDelay: '0.2s' }}
       >
         The Earth
         <br />
-        <em className="text-gold not-italic">{"Can't Wait."}</em>
+        <em className="text-gold not-italic">Can&apos;t Wait.</em>
       </h1>
-
-      {/* Sub-headline */}
       <p
         className="hero-fade max-w-[560px] leading-[1.75] text-white/72"
         style={{
@@ -36,8 +31,6 @@ export default function HeroContent() {
       >
         {HERO_SUB}
       </p>
-
-      {/* CTAs */}
       <div className="hero-fade flex flex-wrap gap-3" style={{ animationDelay: '0.52s' }}>
         <Link href={HERO_CTA_PRIMARY.href}>
           <Button variant="primary">{HERO_CTA_PRIMARY.label}</Button>
@@ -57,7 +50,6 @@ export default function HeroContent() {
           </Button>
         </Link>
       </div>
-
       <HeroStats />
     </div>
   )
