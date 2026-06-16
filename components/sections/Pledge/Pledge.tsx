@@ -3,6 +3,7 @@
 import { useState } from 'react'
 
 import Button from '@/components/ui/Button'
+import { FadeUp, ScaleIn, Stagger, StaggerItem } from '@/components/ui/Motion'
 import { PLEDGE_CHIPS } from '@/shared/constants'
 
 import {
@@ -27,44 +28,49 @@ export default function Pledge() {
   return (
     <section id="pledge" aria-labelledby="pledge-heading" className="section-padding bg-cream-dark">
       <div className="section-container">
-        <div className="reveal mb-12 text-center">
+        <FadeUp className="mb-12 text-center">
           <span className="eyebrow">{PLEDGE_EYEBROW}</span>
           <div className="divider-leaf" />
           <h2 id="pledge-heading" className="section-heading mt-4">
             {PLEDGE_HEADING}
           </h2>
           <p className="body-lg mx-auto mt-4 max-w-130">{PLEDGE_SUBTEXT}</p>
-        </div>
+        </FadeUp>
 
         {submitted ? (
-          <div className="reveal mx-auto max-w-lg rounded-2xl border border-green-leaf/30 bg-green-mist px-8 py-10 text-center">
-            <div className="mb-4 text-4xl" aria-hidden="true">
-              🌿
+          <ScaleIn>
+            <div className="mx-auto max-w-lg rounded-2xl border border-green-leaf/30 bg-green-mist px-8 py-10 text-center">
+              <div className="mb-4 text-4xl" aria-hidden="true">
+                🌿
+              </div>
+              <p className="mb-6 text-base font-semibold text-green-deep">
+                {PLEDGE_SUCCESS_MESSAGE}
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  reset()
+                  setSubmitted(false)
+                }}
+                className="text-sm text-green-forest/60 underline underline-offset-2 transition-colors hover:text-green-forest"
+              >
+                Change my pledge
+              </button>
             </div>
-            <p className="mb-6 text-base font-semibold text-green-deep">{PLEDGE_SUCCESS_MESSAGE}</p>
-            <button
-              type="button"
-              onClick={() => {
-                reset()
-                setSubmitted(false)
-              }}
-              className="text-sm text-green-forest/60 underline underline-offset-2 transition-colors hover:text-green-forest"
-            >
-              Change my pledge
-            </button>
-          </div>
+          </ScaleIn>
         ) : (
-          <div className="reveal mx-auto max-w-2xl">
-            <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <FadeUp delay={0.1} className="mx-auto max-w-2xl">
+            <Stagger className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {PLEDGE_CHIPS.map((chip) => (
-                <PledgeChipItem
-                  key={chip.id}
-                  chip={chip}
-                  isSelected={selected.has(chip.id)}
-                  onToggle={toggle}
-                />
+                <StaggerItem key={chip.id}>
+                  <PledgeChipItem
+                    chip={chip}
+                    isSelected={selected.has(chip.id)}
+                    onToggle={toggle}
+                  />
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
 
             <div className="text-center">
               <Button
@@ -76,7 +82,7 @@ export default function Pledge() {
                 {PLEDGE_CTA_LABEL}
               </Button>
             </div>
-          </div>
+          </FadeUp>
         )}
       </div>
     </section>

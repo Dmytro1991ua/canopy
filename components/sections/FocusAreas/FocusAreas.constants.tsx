@@ -116,5 +116,3 @@ export const FOCUS_CARDS: FocusCard[] = [
     learnMoreHref: '#pledge',
   },
 ]
-
-export const FOCUS_CARD_DELAYS = ['0ms', '80ms', '160ms', '240ms']

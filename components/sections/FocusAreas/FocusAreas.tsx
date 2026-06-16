@@ -1,5 +1,6 @@
+import { FadeUp, Stagger, StaggerItem } from '@/components/ui/Motion'
+
 import {
-  FOCUS_CARD_DELAYS,
   FOCUS_CARDS,
   FOCUS_EYEBROW,
   FOCUS_HEADING_LINE1,
@@ -12,7 +13,7 @@ export default function FocusAreas() {
   return (
     <section id="focus" aria-labelledby="focus-heading" className="section-padding bg-cream-dark">
       <div className="section-container">
-        <div className="reveal mb-14 text-center">
+        <FadeUp className="mb-14 text-center">
           <span className="eyebrow">{FOCUS_EYEBROW}</span>
           <div className="divider-leaf" />
           <h2 id="focus-heading" className="section-heading mt-4">
@@ -20,14 +21,16 @@ export default function FocusAreas() {
             <br />
             {FOCUS_HEADING_LINE2}
           </h2>
-          <p className="body-lg mx-auto mt-4 max-w-[520px]">{FOCUS_SUBTEXT}</p>
-        </div>
+          <p className="body-lg mx-auto mt-4 max-w-130">{FOCUS_SUBTEXT}</p>
+        </FadeUp>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {FOCUS_CARDS.map((card, i) => (
-            <FocusCardItem key={card.id} card={card} delay={FOCUS_CARD_DELAYS[i]} />
+        <Stagger className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {FOCUS_CARDS.map((card) => (
+            <StaggerItem key={card.id}>
+              <FocusCardItem card={card} />
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   )

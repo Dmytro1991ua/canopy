@@ -2,7 +2,7 @@ import type { HowStepProps } from './HowItWorks.types'
 
 export default function HowStepItem({ number, title, description, isLast }: HowStepProps) {
   return (
-    <div className="reveal relative flex flex-col items-center text-center">
+    <div className="relative flex flex-col items-center text-center">
       {/* Dashed connector — hidden on last card, hidden on mobile */}
       {!isLast && (
         <div
@@ -11,13 +11,12 @@ export default function HowStepItem({ number, title, description, isLast }: HowS
         />
       )}
 
-      {/* Step number badge */}
       <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border-2 border-gold/40 bg-green-forest">
         <span className="font-display text-xl font-bold text-gold">{number}</span>
       </div>
 
       <h3 className="mb-3 text-lg font-semibold text-cream">{title}</h3>
-      <p className="body-lg max-w-[260px] text-green-mist/80">{description}</p>
+      <p className="body-lg max-w-65 text-green-mist/80">{description}</p>
     </div>
   )
 }

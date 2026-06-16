@@ -4,7 +4,6 @@ import type { FocusCard } from './FocusAreas.types'
 
 type Props = Readonly<{
   card: FocusCard
-  delay?: string
 }>
 
 const ARROW_ICON = (
@@ -19,14 +18,11 @@ const ARROW_ICON = (
   </svg>
 )
 
-export default function FocusCardItem({ card, delay }: Props) {
+export default function FocusCardItem({ card }: Props) {
   return (
-    <article
-      className="card reveal group flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2"
-      style={delay ? { animationDelay: delay } : undefined}
-    >
+    <article className="card group flex h-full flex-col gap-3 transition-transform duration-300 hover:-translate-y-2">
       <div
-        className={`flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-xl ${ICON_VARIANT_CLASS[card.iconVariant]}`}
+        className={`flex h-13 w-13 shrink-0 items-center justify-center rounded-xl ${ICON_VARIANT_CLASS[card.iconVariant]}`}
         aria-hidden="true"
       >
         {card.iconNode}

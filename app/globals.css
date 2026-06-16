@@ -139,28 +139,6 @@ body {
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.93);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @keyframes navShrink {
   from {
     background-color: transparent;
@@ -177,32 +155,6 @@ body {
     animation: navShrink linear both;
     animation-timeline: scroll(root);
     animation-range: 0px 120px;
-  }
-}
-
-@supports (animation-timeline: view()) {
-  .reveal {
-    animation: fadeUp 0.65s var(--ease-smooth) both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 28%;
-  }
-
-  .reveal-scale {
-    animation: scaleIn 0.6s var(--ease-smooth) both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 28%;
-  }
-
-  .reveal-delay-1 {
-    animation-delay: 80ms;
-  }
-
-  .reveal-delay-2 {
-    animation-delay: 160ms;
-  }
-
-  .reveal-delay-3 {
-    animation-delay: 240ms;
   }
 }
 
