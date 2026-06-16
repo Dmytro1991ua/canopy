@@ -27,19 +27,17 @@ function CrisisStatItem({ stat }: Readonly<{ stat: CrisisStat }>) {
 
 export default function WhyItMattersCard() {
   return (
-    <div className="reveal-scale">
-      <div
-        className="relative overflow-hidden rounded-2xl bg-green-forest p-8"
-        style={{
-          background:
-            'radial-gradient(circle at top right, rgba(242,176,56,.18) 0%, transparent 60%), #2d5a1b',
-        }}
-      >
-        <div className="relative grid grid-cols-2 gap-4">
-          {CRISIS_STATS.map((stat) => (
-            <CrisisStatItem key={stat.label} stat={stat} />
-          ))}
-        </div>
+    <div
+      className="relative overflow-hidden rounded-2xl bg-green-forest p-8"
+      style={{
+        background:
+          'radial-gradient(circle at top right, rgba(242,176,56,.18) 0%, transparent 60%), #2d5a1b',
+      }}
+    >
+      <div className="relative grid grid-cols-2 gap-4">
+        {CRISIS_STATS.map((stat) => (
+          <CrisisStatItem key={stat.label} stat={stat} />
+        ))}
       </div>
     </div>
   )
