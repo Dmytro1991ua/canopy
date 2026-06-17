@@ -1,11 +1,11 @@
 'use client'
 
-import type { ReactNode } from 'react'
-
 import { motion } from 'framer-motion'
 
 import { STAGGER_CONTAINER_VARIANTS, STAGGER_ITEM_VARIANTS } from './Motion.constants'
+
 import type { MotionBaseProps } from './Motion.types'
+import type { ReactNode } from 'react'
 
 type StaggerChildProps = Readonly<{
   children: ReactNode

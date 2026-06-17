@@ -1,5 +1,5 @@
-import { TESTIMONIAL } from '@/shared/constants'
 import { FadeUp, ScaleIn } from '@/components/ui/Motion'
+import { TESTIMONIAL } from '@/shared/constants'
 
 import { TESTIMONIAL_EYEBROW, TESTIMONIAL_HEADING } from './Testimonial.constants'
 

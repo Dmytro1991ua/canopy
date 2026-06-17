@@ -1,5 +1,5 @@
-import { IMPACT_STATS } from '@/shared/constants'
 import { FadeUp, Stagger, StaggerItem } from '@/components/ui/Motion'
+import { IMPACT_STATS } from '@/shared/constants'
 
 import { IMPACT_EYEBROW, IMPACT_HEADING, IMPACT_SUBTEXT } from './ImpactNumbers.constants'
 import ImpactStatCard from './ImpactStatCard'

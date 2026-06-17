@@ -8,7 +8,7 @@ export default function HeroBackground() {
       {/* Warm sun glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-[15%] -right-[8%] h-[75vmax] w-[75vmax]"
+        className="pointer-events-none absolute top-[-15%] right-[-8%] h-[75vmax] w-[75vmax]"
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(242,176,56,.22) 0%, rgba(232,148,26,.1) 40%, transparent 70%)',
@@ -30,7 +30,7 @@ export default function HeroBackground() {
         viewBox="0 0 500 640"
         fill="currentColor"
         aria-hidden="true"
-        focusable="false"
+        focusable={false}
         className="pointer-events-none absolute top-[5%] right-[-4%] text-green-leaf"
         style={{ width: 'clamp(320px, 40vw, 680px)', opacity: 0.12 }}
       >
@@ -59,14 +59,14 @@ export default function HeroBackground() {
         />
       </svg>
 
-      {/* Floating leaf decorations */}
-      {FLOATING_LEAVES.map((leaf, i) => (
+      {/* Floating leaf decorations — CSS leafDrift animation */}
+      {FLOATING_LEAVES.map((leaf) => (
         <svg
-          key={i}
+          key={leaf.id}
           viewBox="0 0 80 110"
           fill="currentColor"
           aria-hidden="true"
-          className="pointer-events-none absolute z-[1]"
+          className="pointer-events-none absolute z-1"
           style={{
             width: leaf.size,
             top: leaf.top,

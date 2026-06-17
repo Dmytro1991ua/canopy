@@ -11,6 +11,7 @@ export type HeroCta = {
 }
 
 export type FloatingLeaf = {
+  id: string
   size: string
   top: string
   right: string

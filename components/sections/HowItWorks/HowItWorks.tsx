@@ -1,5 +1,5 @@
-import { HOW_STEPS } from '@/shared/constants'
 import { FadeUp, Stagger, StaggerItem } from '@/components/ui/Motion'
+import { HOW_STEPS } from '@/shared/constants'
 
 import { HOW_EYEBROW, HOW_HEADING, HOW_SUBTEXT } from './HowItWorks.constants'
 import HowStepItem from './HowStepItem'

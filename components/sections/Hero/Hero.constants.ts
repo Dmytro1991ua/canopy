@@ -16,6 +16,7 @@ export const HERO_STATS: HeroStat[] = [
 
 export const FLOATING_LEAVES: FloatingLeaf[] = [
   {
+    id: 'leaf-large',
     size: 'clamp(80px, 10vw, 160px)',
     top: '18%',
     right: '10%',
@@ -25,6 +26,7 @@ export const FLOATING_LEAVES: FloatingLeaf[] = [
     color: '#9ec26a',
   },
   {
+    id: 'leaf-medium',
     size: 'clamp(50px, 6vw, 100px)',
     top: '55%',
     right: '24%',
@@ -35,6 +37,7 @@ export const FLOATING_LEAVES: FloatingLeaf[] = [
     reverse: true,
   },
   {
+    id: 'leaf-small',
     size: 'clamp(40px, 4vw, 72px)',
     top: '28%',
     right: '42%',

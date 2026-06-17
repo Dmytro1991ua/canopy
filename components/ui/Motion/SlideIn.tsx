@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 
 import { SLIDE_IN_VARIANTS } from './Motion.constants'
+
 import type { SlideInProps } from './Motion.types'
 
 export default function SlideIn({

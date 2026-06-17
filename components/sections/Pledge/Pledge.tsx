@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 
+import { AnimatePresence, motion } from 'framer-motion'
+
 import Button from '@/components/ui/Button'
-import { FadeUp, ScaleIn, Stagger, StaggerItem } from '@/components/ui/Motion'
+import { FadeUp, Stagger, StaggerItem } from '@/components/ui/Motion'
 import { PLEDGE_CHIPS } from '@/shared/constants'
 
 import {
@@ -15,6 +17,8 @@ import {
 } from './Pledge.constants'
 import { usePledge } from './Pledge.hooks'
 import PledgeChipItem from './PledgeChipItem'
+
+const EXPO_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 export default function Pledge() {
   const { selected, toggle, canSubmit, reset } = usePledge()
@@ -37,53 +41,70 @@ export default function Pledge() {
           <p className="body-lg mx-auto mt-4 max-w-130">{PLEDGE_SUBTEXT}</p>
         </FadeUp>
 
-        {submitted ? (
-          <ScaleIn>
-            <div className="mx-auto max-w-lg rounded-2xl border border-green-leaf/30 bg-green-mist px-8 py-10 text-center">
-              <div className="mb-4 text-4xl" aria-hidden="true">
-                🌿
-              </div>
-              <p className="mb-6 text-base font-semibold text-green-deep">
-                {PLEDGE_SUCCESS_MESSAGE}
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  reset()
-                  setSubmitted(false)
-                }}
-                className="text-sm text-green-forest/60 underline underline-offset-2 transition-colors hover:text-green-forest"
+        <div aria-live="polite" aria-atomic="true">
+          <AnimatePresence mode="wait">
+            {submitted ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, scale: 0.88, y: 24 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -8, transition: { duration: 0.2 } }}
+                transition={{ type: 'spring', stiffness: 260, damping: 22 }}
               >
-                Change my pledge
-              </button>
-            </div>
-          </ScaleIn>
-        ) : (
-          <FadeUp delay={0.1} className="mx-auto max-w-2xl">
-            <Stagger className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {PLEDGE_CHIPS.map((chip) => (
-                <StaggerItem key={chip.id}>
-                  <PledgeChipItem
-                    chip={chip}
-                    isSelected={selected.has(chip.id)}
-                    onToggle={toggle}
-                  />
-                </StaggerItem>
-              ))}
-            </Stagger>
+                <div className="mx-auto max-w-lg rounded-2xl border border-green-leaf/30 bg-green-mist px-8 py-10 text-center">
+                  <div className="mb-4 text-4xl" aria-hidden="true">
+                    🌿
+                  </div>
+                  <p className="mb-6 text-base font-semibold text-green-deep">
+                    {PLEDGE_SUCCESS_MESSAGE}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      reset()
+                      setSubmitted(false)
+                    }}
+                    className="text-sm text-green-forest/60 underline underline-offset-2 transition-colors hover:text-green-forest"
+                  >
+                    Change my pledge
+                  </button>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="form"
+                className="mx-auto max-w-2xl"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.45, ease: EXPO_OUT }}
+              >
+                <Stagger className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {PLEDGE_CHIPS.map((chip) => (
+                    <StaggerItem key={chip.id}>
+                      <PledgeChipItem
+                        chip={chip}
+                        isSelected={selected.has(chip.id)}
+                        onToggle={toggle}
+                      />
+                    </StaggerItem>
+                  ))}
+                </Stagger>
 
-            <div className="text-center">
-              <Button
-                variant="primary"
-                disabled={!canSubmit}
-                onClick={handleSubmit}
-                className="btn-wiggle min-w-50 disabled:animate-none disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                {PLEDGE_CTA_LABEL}
-              </Button>
-            </div>
-          </FadeUp>
-        )}
+                <div className="text-center">
+                  <Button
+                    variant="primary"
+                    disabled={!canSubmit}
+                    onClick={handleSubmit}
+                    className="btn-wiggle min-w-50 disabled:animate-none disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {PLEDGE_CTA_LABEL}
+                  </Button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   )

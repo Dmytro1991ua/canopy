@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 
 import { FADE_UP_VARIANTS } from './Motion.constants'
+
 import type { MotionBaseProps } from './Motion.types'
 
 export default function FadeUp({ children, className, delay = 0 }: MotionBaseProps) {

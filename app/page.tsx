@@ -5,6 +5,7 @@ import Hero from '@/components/sections/Hero'
 import HowItWorks from '@/components/sections/HowItWorks'
 import ImpactNumbers from '@/components/sections/ImpactNumbers'
 import MarqueeBar from '@/components/sections/MarqueeBar'
+import Newsletter from '@/components/sections/Newsletter'
 import Pledge from '@/components/sections/Pledge'
 import Testimonial from '@/components/sections/Testimonial'
 import WhyItMatters from '@/components/sections/WhyItMatters'
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main>
+      <main id="main-content">
         <Hero />
         <MarqueeBar />
         <WhyItMatters />
@@ -23,6 +24,7 @@ export default function Home() {
         <ImpactNumbers />
         <Testimonial />
         <Pledge />
+        <Newsletter />
       </main>
       <Footer />
       <BackToTop />
