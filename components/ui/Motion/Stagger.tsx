@@ -1,11 +1,12 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { type ReactNode } from 'react'
+
+import { motion, useReducedMotion } from 'framer-motion'
 
 import { STAGGER_CONTAINER_VARIANTS, STAGGER_ITEM_VARIANTS } from './Motion.constants'
 
 import type { MotionBaseProps } from './Motion.types'
-import type { ReactNode } from 'react'
 
 type StaggerChildProps = Readonly<{
   children: ReactNode
@@ -21,6 +22,12 @@ export function StaggerItem({ children, className }: StaggerChildProps) {
 }
 
 export default function Stagger({ children, className }: Omit<MotionBaseProps, 'delay'>) {
+  const reduced = useReducedMotion()
+
+  if (reduced) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       className={className}

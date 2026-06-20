@@ -37,7 +37,7 @@ export const FOCUS_CARDS: FocusCard[] = [
     title: 'Reforestation',
     description:
       'We partner with local communities to plant native species, restore degraded land, and protect existing old-growth forests that cannot be replaced.',
-    learnMoreHref: '#pledge',
+    learnMoreHref: '#impact',
   },
   {
     id: 'clean-energy',
@@ -66,7 +66,7 @@ export const FOCUS_CARDS: FocusCard[] = [
     title: 'Clean Energy',
     description:
       'Accelerating the transition from fossil fuels by supporting solar and wind access in underserved communities — where it matters most and costs least.',
-    learnMoreHref: '#pledge',
+    learnMoreHref: '#how',
   },
   {
     id: 'ocean-health',
@@ -89,7 +89,7 @@ export const FOCUS_CARDS: FocusCard[] = [
     title: 'Ocean Health',
     description:
       "From coastal clean-ups to policy advocacy, we're fighting for the seas that regulate our climate, feed billions, and produce half the oxygen we breathe.",
-    learnMoreHref: '#pledge',
+    learnMoreHref: '#why',
   },
   {
     id: 'policy',

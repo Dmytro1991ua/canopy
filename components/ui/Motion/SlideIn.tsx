@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 import { SLIDE_IN_VARIANTS } from './Motion.constants'
 
@@ -12,6 +12,12 @@ export default function SlideIn({
   delay = 0,
   direction = 'left',
 }: SlideInProps) {
+  const reduced = useReducedMotion()
+
+  if (reduced) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       className={className}

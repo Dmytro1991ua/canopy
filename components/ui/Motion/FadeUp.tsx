@@ -1,12 +1,18 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 import { FADE_UP_VARIANTS } from './Motion.constants'
 
 import type { MotionBaseProps } from './Motion.types'
 
 export default function FadeUp({ children, className, delay = 0 }: MotionBaseProps) {
+  const reduced = useReducedMotion()
+
+  if (reduced) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       className={className}

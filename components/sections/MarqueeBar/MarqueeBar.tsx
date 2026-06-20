@@ -12,7 +12,7 @@ export default function MarqueeBar() {
       aria-label={MARQUEE_ARIA_LABEL}
       className="marquee-bar relative z-[4] overflow-hidden bg-amber py-[13px]"
     >
-      <div className="marquee-track items-center whitespace-nowrap" aria-hidden="true">
+      <div className="marquee-track items-center gap-4 whitespace-nowrap" aria-hidden="true">
         {items.map((item, i) => (
           <span key={i} className="inline-flex items-center gap-4">
             <span className="text-xs font-bold tracking-[0.1em] text-green-deep uppercase">
