@@ -2,6 +2,8 @@
 
 A single-page marketing site for **Canopy**, a fictional climate-action organisation. The page walks visitors from the climate crisis ("Why It Matters") through what Canopy does ("Focus Areas", "How It Works"), the impact so far, a testimonial, and two conversion points — a pledge form and a newsletter signup.
 
+<img alt="screencapture-canopy-save-the-world-vercel-app-2026-06-20-10_14_01" src="https://github.com/user-attachments/assets/ddc95f37-ded9-4fb1-91fa-2d7dfbe7b63a" />
+
 ## Workflow: Design → Build, orchestrated end-to-end
 
 This project was built as an exercise in AI-orchestrated front-end delivery:
